@@ -56,7 +56,7 @@ Either make sure you're running a version of node compliant with the `engines` r
 
 Run
 ```bash
-yarn
+npm install
 ```
 
 ## Deploying
@@ -92,9 +92,9 @@ To load all your metadata on your items at once, visit [https://opensea.io/get-l
 ### Troubleshooting
 
 #### It doesn't compile!
-Install truffle locally: `yarn add truffle`. Then run `yarn truffle migrate ...`.
+Install truffle locally: `npm i -g truffle`. Then run `truffle migrate ...`.
 
-You can also debug just the compile step by running `yarn truffle compile`.
+You can also debug just the compile step by running `truffle compile`.
 
 #### It doesn't deploy anything!
 This is often due to the truffle-hdwallet provider not being able to connect. Go to infura.io and create a new Infura project. Use your "project ID" as your new `INFURA_KEY` and make sure you export that command-line variable above.
@@ -110,7 +110,7 @@ export NETWORK="rinkeby"
 node scripts/advanced/mint.js
 ```
 
-Note: When running the minting script on mainnet, your environment variable needs to be set to `mainnet` not `live`.  The environment variable affects the Infura URL in the minting script, not truffle. When you deploy, you're using truffle and you need to give truffle an argument that corresponds to the naming in truffle.js (`--network live`).  But when you mint, you're relying on the environment variable you set to build the URL (https://github.com/ProjectOpenSea/opensea-creatures/blob/master/scripts/mint.js#L54), so you need to use the term that makes Infura happy (`mainnet`).  Truffle and Infura use the same terminology for Rinkeby, but different terminology for mainnet.  If you start your minting script, but nothing happens, double check your environment variables.
+Note: When running the minting script on mainnet, your environment variable needs to be set to `mainnet` not `ganache`.  The environment variable affects the Infura URL in the minting script, not truffle. When you deploy, you're using truffle and you need to give truffle an argument that corresponds to the naming in truffle.js (`--network ganache`).  But when you mint, you're relying on the environment variable you set to build the URL (https://github.com/ProjectOpenSea/opensea-creatures/blob/master/scripts/mint.js#L54), so you need to use the term that makes Infura happy (`mainnet`).  Truffle and Infura use the same terminology for Rinkeby, but different terminology for mainnet.  If you start your minting script, but nothing happens, double check your environment variables.
 
 # License
 

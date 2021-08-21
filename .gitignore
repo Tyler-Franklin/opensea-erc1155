@@ -7,3 +7,15 @@ node_modules/
 .idea/
 yarn.lock
 package-lock.json
+.vscode
+.history
+node_modules/
+.openzeppelin
+build/
+output/
+.seed
+.serect
+*.log
+.seed*
+.env
+
